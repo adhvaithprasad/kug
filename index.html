@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Carbon</title>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script src="https://unpkg.com/monaco-editor@0.8.3/min/vs/loader.js"></script>
+
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+
+<body onload="init()">
+<header class="header">
+  <p>Carbon Code</p>
+
+
+ <div class="left">
+<button onclick="commit()"><span class="material-icons" style="margin-right: 9px;">
+commit
+</span>commit</button>
+    <img id="user_image" >
+</div>
+</header>
+<section class="editor">
+  <div class="navbar">
+    
+      <span id="file-icon" class="material-icons" onclick="fileNav()">
+folder
+</span>
+   
+      <span id="find-icon" class="material-icons" onclick="findNav()">
+search
+</span>
+     <span id="issue-icon" class="material-icons" onclick="issueNav()">
+bug_report
+</span>
+    
+      
+   
+     
+
+</div>
+  <div class="nav-util">
+    <ul id="filetree"></ul>
+    <div id="find-nav">
+      <header class="find-header">
+        <p> Search</p>
+        <div class="find-input">
+    <input type="text" id="find-input" placeholder="search ....">
+    <span class="material-icons" onclick="find()">search</span>
+</div>
+      </header>
+      <br>
+      <p>Results</p>
+      <div id="find-logger"></div>
+    </div>
+    <div id="issue-nav">
+      <header class="issue-header">
+        <p>Issue</p>
+        <div class="issue-input">
+    <div>
+    <input id="issue-title" type="text" placeholder="Title">
+    <textarea id="issue-body" placeholder="describe issue ..."></textarea>
+</div>
+    <button onclick="issue()">Create
+</button></div>
+      </header>
+      <p>Issues</p>
+      <div id="issue-logger" style="
+"></div>
+    </div>
+  </div>
+  
+  
+  <div id="editor"></div>
+
+
+
+</section>
+  <script src="script.js"></script>
+    <script src="editor.js"></script>
+   <script src="func.js"></script>
+</body>
+
+</html>
